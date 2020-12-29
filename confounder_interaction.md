@@ -1,6 +1,5 @@
 ## 如何区分混杂作用（Confounding Effect）和交互作用（Interaction)
 
-原文首发于[知乎专栏](https://zhuanlan.zhihu.com/p/138017624)
 
 ### 写在前面：
  - 不是为了深入讨论，只是想尽量简单清晰地解释二者，以形成对两个概念大概的判断
