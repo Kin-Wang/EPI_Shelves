@@ -61,7 +61,7 @@
 - 因为方向完全反了，性质完全变了
 - 如果我们去算校正RR（Adjusted RR），就会发现这样的特点：校正RR和未校正RR在1的两边，方向不一样，一个大于1，另一个就要小于1
 
-[https://www.ctspedia.org/do/view/CTSpedia/BiasConfoundTypes/] 
+[Link](https://www.ctspedia.org/do/view/CTSpedia/BiasConfoundTypes/)
 
 ## 总结：到底怎么确定存在混杂作用呢？
 - 首先，根据这个第三方因素分层以后的关联测量数（例如RRz+和RRz-），它们两个必须都在同一个方向
@@ -102,6 +102,6 @@
 - 只不过，分层以后，某一层的RR程度更强，另一层的RR程度变弱
 - 这个第三方因素并没有扭曲你原本的因果关系
 
-[https://www.ctspedia.org/do/view/CTSpedia/InteractionGraph]
+[Link](https://www.ctspedia.org/do/view/CTSpedia/InteractionGraph/)
 ```
 
