@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Welcome to Kin Wang's Pages
 
 You can use the [editor on GitHub](https://github.com/Kin-Wang/EPI_Shelves/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
