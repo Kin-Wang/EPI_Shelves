@@ -88,6 +88,10 @@ data(fauxmadrona)
 plot(fauxmadrona, plot.type = "Recruitment tree", stratify.by = "disease")
 plot(fauxmadrona, plot.type = "Network size by wave", stratify.by = "disease")
 ```
+1. 招募状况树（种子当中，患病者占比较低，符合真实状况）
+![1](https://user-images.githubusercontent.com/60868837/103435055-9c769100-4bd7-11eb-94b0-29dd035ba7f9.png)
+2. 网络数量图（患病人群和未患病人群的网络数量存在差异，也就是差异性活动比较大）
+![2](https://user-images.githubusercontent.com/60868837/103435056-a13b4500-4bd7-11eb-8b4c-83b9310cac43.png)
 
 ``` R
 # 使用estimators去估计总体，以fauxmadrona
@@ -144,6 +148,12 @@ bottleneck.plot(fauxmadrona, outcome.variable = "disease", est.func = RDS.II.est
 # Gile's SS
 bottleneck.plot(fauxmadrona, outcome.variable = "disease", est.func = RDS.SS.estimates)
 ```
+3. RDS-I（没有明显的分支，说明同质性并没有很高）
+![3](https://user-images.githubusercontent.com/60868837/103435057-a39d9f00-4bd7-11eb-80f9-8d551789ecf5.png)
+4. RDS-II（没有明显的分支，说明同质性并没有很高）
+![4](https://user-images.githubusercontent.com/60868837/103435058-a5fff900-4bd7-11eb-8377-6c3c6549f0e3.png)
+5. SS（没有明显的分支，说明同质性并没有很高）
+![5](https://user-images.githubusercontent.com/60868837/103435059-a8625300-4bd7-11eb-8455-4dca15ab4a49.png)
 
 ``` R
 # convergence plot
@@ -155,6 +165,12 @@ convergence.plot(fauxmadrona, outcome.variable = "disease", est.func = RDS.II.es
 # Gile's SS
 convergence.plot(fauxmadrona, outcome.variable = "disease", est.func = RDS.SS.estimates)
 ```
+6. RDS-I（随着样本量增加，出现聚合，说明样本量足够）
+![6](https://user-images.githubusercontent.com/60868837/103435060-aa2c1680-4bd7-11eb-806c-458afccfcada.png)
+7. RDS-II
+![7](https://user-images.githubusercontent.com/60868837/103435062-adbf9d80-4bd7-11eb-8cd3-fdd67e3fd345.png)
+8. SS
+![8](https://user-images.githubusercontent.com/60868837/103435063-b021f780-4bd7-11eb-84de-6c8dd4c3d3c6.png)
 
 ``` R
 # 使用fauxtime数据集来看看HCG的情况
@@ -174,3 +190,35 @@ bottleneck.plot(fauxtime, outcome.variable = "var1", est.func = RDS.HCG.estimate
 # convergence plot
 convergence.plot(fauxtime, outcome.variable = "var1", est.func = RDS.HCG.estimates)
 ```
+### 9. 如何用RDS Analyst分析数据
+- 软件下载地址：http://wiki.stat.ucla.edu/hpmrg/index.php/RDS_Analyst_Install
+- Windows和Mac平台都可以安装和运行
+##### 1）将格式为.csv的数据导入到RDS Analyst当中
+- 打开RDS Analyst，点击Open Data，选择要导入的数据
+- 导入后，自动跳出以下界面（选择两种导入模式：一种需要有Recruiter ID，另一种只需要Coupon IDs）
+- Coupon ID模式（请确保你的数据没有缺失值、非正常值等问题）
+
+- Recruiter ID模式（请确保你的数据没有缺失值、非正常值等问题）
+
+##### 2）可视化招募状况和网络数量
+- 点击RDS Sample，再点击Diagnostic Plots
+- 将想要分层的变量导入
+- 选择Recruitment tree和Network size by wave
+
+##### 3) 估算总体并产生Bottleneck Plot和Convergence Plot
+- 点击RDS Population，再点击Frequency Estimates
+- 将想要分析的变量导入，例如疾病状态
+- 选择合适的estimator
+- 勾选bottleneck plot和convergence plot
+
+##### 4) 诊断同质性和差异性活动
+- 点击RDS Population，再点击Population Homophily
+- 选择想要分析的变量导入，填写估计的总体数量
+- 点击RDS Population，再点击Differential Activity
+- 选择想要分析的变量导入，选择合适的estimator
+
+##### 5）总结
+- RDS Analyst还有很多功能，例如利用估算总体数量（后验），时间趋势数据的检验，等
+- 上面只是最简单最基本的分析
+
+
