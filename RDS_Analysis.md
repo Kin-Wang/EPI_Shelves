@@ -51,7 +51,12 @@
 很高的差异性活动 |  不可以 |  不可以 | 可以 | 可以
 连续性变量 |  不可以 |  可以 | 可以 | 可以
 
-### 8. 使用R语言的RDS包来分析数据
+### 8. 几个estimators的关键性区别
+- RDS-I和RDS-II全部基于放回抽样假设，而SS和HCG全部基于不放回抽样假设
+  - 在实际调查中，放回抽样假设是不现实的，不会有研究者让被访者可以随机多次参与调查
+- RDS-I基于马科夫链条假设，RDS-II利用Random Walk，而SS则是Successive Sampling加Configuration Graph Network Model，HCG基于Configuration Graph Network Model并且将同质性单独加入
+
+### 9. 使用R语言的RDS包来分析数据
 ``` R
 # 以一个格式为.csv的文件为例导入数据到R
 dat1 <- read.csv("..path../name.csv")
@@ -190,26 +195,35 @@ bottleneck.plot(fauxtime, outcome.variable = "var1", est.func = RDS.HCG.estimate
 # convergence plot
 convergence.plot(fauxtime, outcome.variable = "var1", est.func = RDS.HCG.estimates)
 ```
-### 9. 如何用RDS Analyst分析数据
+### 10. 如何用RDS Analyst分析数据
 - 软件下载地址：http://wiki.stat.ucla.edu/hpmrg/index.php/RDS_Analyst_Install
 - Windows和Mac平台都可以安装和运行
+
 ##### 1）将格式为.csv的数据导入到RDS Analyst当中
 - 打开RDS Analyst，点击Open Data，选择要导入的数据
 - 导入后，自动跳出以下界面（选择两种导入模式：一种需要有Recruiter ID，另一种只需要Coupon IDs）
 - Coupon ID模式（请确保你的数据没有缺失值、非正常值等问题）
 
+![Picture1](https://user-images.githubusercontent.com/60868837/103435543-190c6e00-4bde-11eb-831b-053ed6b58c4f.png)
+
 - Recruiter ID模式（请确保你的数据没有缺失值、非正常值等问题）
+
+![Picture2](https://user-images.githubusercontent.com/60868837/103435545-1b6ec800-4bde-11eb-8006-cf523bbadabf.png)
 
 ##### 2）可视化招募状况和网络数量
 - 点击RDS Sample，再点击Diagnostic Plots
 - 将想要分层的变量导入
 - 选择Recruitment tree和Network size by wave
 
+![Screen Shot 2021-01-01 at 02 55 37](https://user-images.githubusercontent.com/60868837/103435551-2c1f3e00-4bde-11eb-8ced-f7d72df05999.png)
+
 ##### 3) 估算总体并产生Bottleneck Plot和Convergence Plot
 - 点击RDS Population，再点击Frequency Estimates
 - 将想要分析的变量导入，例如疾病状态
 - 选择合适的estimator
 - 勾选bottleneck plot和convergence plot
+
+![Screen Shot 2021-01-01 at 02 47 55](https://user-images.githubusercontent.com/60868837/103435554-30e3f200-4bde-11eb-9a78-d834eba01247.png)
 
 ##### 4) 诊断同质性和差异性活动
 - 点击RDS Population，再点击Population Homophily
@@ -220,5 +234,14 @@ convergence.plot(fauxtime, outcome.variable = "var1", est.func = RDS.HCG.estimat
 ##### 5）总结
 - RDS Analyst还有很多功能，例如利用估算总体数量（后验），时间趋势数据的检验，等
 - 上面只是最简单最基本的分析
+
+### 11.参考文献
+- Salganik MJ, Heckathorn DD. Sampling and estimation in hidden populations using respondent-driven sampling. Sociol Methodol. 2004;34(1):193-240.
+- Volz E, Heckathorn DD. Probability based estimation theory for respondent driven sampling. J Off Stat. 2008;24(1):79-97.
+- Gile KJ, Handcock MS. Respondent-driven sampling: an assessment of current methodology. Sociol Methodol. 2010;40(1):285-327.
+- Gile KJ. Improved inference for respondent-driven sampling data with application to HIV prevalence estimation. J Am Stat Assoc. 2011;106(493):135-146.
+- Gile KJ, Handcock MS. Network model-assisted inference from respondent-driven sampling data. J Royal Stat Soc Ser A (Stat Soc). 2015;178(3):619-639.
+- Fellows IE. Respondent-Driven Sampling and the Homophily Configuration Graph Statistics in Medicine. 2019;38:131–150. 
+
 
 
