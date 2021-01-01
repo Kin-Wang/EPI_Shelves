@@ -1,4 +1,5 @@
 ## 如何分析RDS数据
+[English Version](https://github.com/Kin-Wang/EPI_Shelves/blob/main/RDS%20Analyst.pdf) and [R Code](https://github.com/Kin-Wang/EPI_Shelves/blob/main/RDS.R)
 
 ### 1. RDS是什么
 - RDS，全名Respondent Driven Sampling（同伴推动抽样）。可以理解为“滚雪球抽样”的进阶版。适用于Hidden Population，也就是没有抽样框进行概率抽样的人群。例如，LGBTQ、性工作者、非法移民。
