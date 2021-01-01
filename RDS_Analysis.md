@@ -199,7 +199,7 @@ convergence.plot(fauxtime, outcome.variable = "var1", est.func = RDS.HCG.estimat
 - 软件下载地址：http://wiki.stat.ucla.edu/hpmrg/index.php/RDS_Analyst_Install
 - Windows和Mac平台都可以安装和运行
 
-##### 1）将格式为.csv的数据导入到RDS Analyst当中
+#### 1）将格式为.csv的数据导入到RDS Analyst当中
 - 打开RDS Analyst，点击Open Data，选择要导入的数据
 - 导入后，自动跳出以下界面（选择两种导入模式：一种需要有Recruiter ID，另一种只需要Coupon IDs）
 - Coupon ID模式（请确保你的数据没有缺失值、非正常值等问题）
@@ -210,14 +210,14 @@ convergence.plot(fauxtime, outcome.variable = "var1", est.func = RDS.HCG.estimat
 
 ![Picture2](https://user-images.githubusercontent.com/60868837/103435545-1b6ec800-4bde-11eb-8006-cf523bbadabf.png)
 
-##### 2）可视化招募状况和网络数量
+#### 2）可视化招募状况和网络数量
 - 点击RDS Sample，再点击Diagnostic Plots
 - 将想要分层的变量导入
 - 选择Recruitment tree和Network size by wave
 
 ![Screen Shot 2021-01-01 at 02 55 37](https://user-images.githubusercontent.com/60868837/103435551-2c1f3e00-4bde-11eb-8ced-f7d72df05999.png)
 
-##### 3) 估算总体并产生Bottleneck Plot和Convergence Plot
+#### 3) 估算总体并产生Bottleneck Plot和Convergence Plot
 - 点击RDS Population，再点击Frequency Estimates
 - 将想要分析的变量导入，例如疾病状态
 - 选择合适的estimator
@@ -225,13 +225,13 @@ convergence.plot(fauxtime, outcome.variable = "var1", est.func = RDS.HCG.estimat
 
 ![Screen Shot 2021-01-01 at 02 47 55](https://user-images.githubusercontent.com/60868837/103435554-30e3f200-4bde-11eb-9a78-d834eba01247.png)
 
-##### 4) 诊断同质性和差异性活动
+#### 4) 诊断同质性和差异性活动
 - 点击RDS Population，再点击Population Homophily
 - 选择想要分析的变量导入，填写估计的总体数量
 - 点击RDS Population，再点击Differential Activity
 - 选择想要分析的变量导入，选择合适的estimator
 
-##### 5）总结
+#### 5）总结
 - RDS Analyst还有很多功能，例如利用估算总体数量（后验），时间趋势数据的检验，等
 - 上面只是最简单最基本的分析
 
